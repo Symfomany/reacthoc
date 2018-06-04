@@ -9,7 +9,8 @@ class AppProvider extends Component {
 
   getChildContext() {
     return {
-      store: this.props.store
+      message: this.props.message,
+      theme: this.props.theme
     };
   }
 
@@ -19,10 +20,12 @@ class AppProvider extends Component {
 }
 
 AppProvider.childContextTypes = {
-  store: PropTypes.object
+  message: PropTypes.string,
+  theme: PropTypes.object
 };
 
 AppProvider.propTypes = {
+  theme: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired
 };
 

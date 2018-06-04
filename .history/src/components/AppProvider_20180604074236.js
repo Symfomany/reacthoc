@@ -19,10 +19,12 @@ class AppProvider extends Component {
 }
 
 AppProvider.childContextTypes = {
-  store: PropTypes.object
+  message: PropTypes.string,
+  theme: PropTypes.object
 };
 
 AppProvider.propTypes = {
+  theme: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired
 };
 

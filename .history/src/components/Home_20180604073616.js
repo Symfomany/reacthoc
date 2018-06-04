@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Title from "./Title";
+import withTheme from "../hoc/withTheme";
 /**
  * Composant Home
  */
@@ -18,4 +19,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withTheme(Home);

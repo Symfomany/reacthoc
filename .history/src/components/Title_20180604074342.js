@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Subtitle from "./Subtitle";
 
 /**
  * Composant Home
@@ -13,8 +12,7 @@ class Title extends Component {
   render() {
     return (
       <div>
-        <h3>Nb de produit à afficher {this.context.store.data.nbDisplay}</h3>
-        <Subtitle />
+        <h3>{this.context.message}</h3>
       </div>
     );
   }

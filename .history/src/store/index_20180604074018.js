@@ -4,7 +4,6 @@ const Store = {
     search: "",
     products: [],
     realtime: false,
-    displayBlocks: 3,
     orderBy: "title"
   },
   get(key) {

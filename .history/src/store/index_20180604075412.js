@@ -1,5 +1,5 @@
 const Store = {
-  data: {
+  datas: {
     nbDisplay: 10,
     search: "",
     products: [],

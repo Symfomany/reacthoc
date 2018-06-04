@@ -23,6 +23,7 @@ AppProvider.childContextTypes = {
 };
 
 AppProvider.propTypes = {
+  theme: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired
 };
 

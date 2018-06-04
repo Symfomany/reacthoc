@@ -1,11 +1,7 @@
 const Store = {
   data: {
-    nbDisplay: 10,
-    search: "",
-    products: [],
-    realtime: false,
-    displayBlocks: 3,
-    orderBy: "title"
+    title: "Je suis Julien",
+    subtitle: "Je suis un soustitre du Store"
   },
   get(key) {
     return this.data[key];
