@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Subtitle from "./Subtitle";
+import withStore from "../hoc/withStore";
 
 /**
  * Composant Home
@@ -9,19 +8,22 @@ class Title extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.changer = this.changer.bind(this);
+  }
+
+  changer() {
+    this.props.store.register("message", "Hello Alpha!");
+    this.props.store.register("nbDisplay", this.props.store.data.nbDisplay + 1);
   }
   render() {
+    const nb = 2;
     return (
       <div>
-        <h3>Nb de produit à afficher {this.context.store.data.nbDisplay}</h3>
-        <Subtitle />
+        <p>{this.props.message}</p>
+        <button onClick={this.changer}>Changez-moi</button>
       </div>
     );
   }
 }
 
-Title.contextTypes = {
-  store: PropTypes.object
-};
-
-export default Title;
+export default withStore(Title);

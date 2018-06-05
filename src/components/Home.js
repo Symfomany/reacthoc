@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Title from "./Title";
+import Card from "../facc/Card";
 /**
  * Composant Home
  */
@@ -11,8 +12,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Je suis le Composant Home </h1>
-        <Title />
+        <Card title="Je suis un beau titre">
+          <Title />
+        </Card>
       </div>
     );
   }

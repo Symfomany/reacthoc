@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 const withStore = ComponentToWrap => {
   return class extends Component {
     static contextTypes = {
+      message: PropTypes.string.isRequired,
       store: PropTypes.object.isRequired
     };
     render() {
-      const { store } = this.context;
-      return <ComponentToWrap {...this.props} store={store} />;
+      return <ComponentToWrap {...this.context} />;
     }
   };
 };

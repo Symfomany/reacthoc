@@ -4,11 +4,11 @@ import ReactDOM from "react-dom";
 import AppProvider from "./components/AppProvider";
 import App from "./components/App";
 import registerServiceWorker from "./registerServiceWorker";
-import store from "./store";
+import Store from "./store";
 
 // Main Render
 ReactDOM.render(
-  <AppProvider store={store}>
+  <AppProvider store={Store}>
     <App />
   </AppProvider>,
   document.getElementById("root")
