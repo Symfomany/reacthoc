@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StateProvider } from "react-state-provider";
-import emitter from "../store/emitter";
+import { EventEmitter } from "fbemitter";
 
 class CounterButtons extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class CounterButtons extends Component {
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
     this.reset = this.reset.bind(this);
+    this.emitter = new EventEmitter();
   }
 
   increment() {
@@ -18,7 +19,7 @@ class CounterButtons extends Component {
 
     if (store.nbDisplay > 20) {
       store.displayBlocks += 5;
-      emitter.emit("lala");
+      this.emitter.emit("lala");
       console.log("oki");
     } else if (store.nbDisplay === 0) {
       store.displayBlocks = 0;

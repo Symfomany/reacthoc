@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StateProvider } from "react-state-provider";
-import emitter from "../store/emitter";
+
 class CounterDisplay extends Component {
   constructor(props) {
     super(props);
@@ -13,12 +13,6 @@ class CounterDisplay extends Component {
     this.state = {
       store: this.counterState.get("store")
     };
-
-    emitter.addListener("lala", this.coucou);
-  }
-
-  coucou() {
-    console.log("Whaouuuuuuu !!! le secret ");
   }
 
   componentDidMount() {

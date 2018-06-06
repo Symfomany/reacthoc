@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StateProvider } from "react-state-provider";
-import emitter from "../store/emitter";
 
 class CounterButtons extends Component {
   constructor(props) {
@@ -18,10 +17,8 @@ class CounterButtons extends Component {
 
     if (store.nbDisplay > 20) {
       store.displayBlocks += 5;
-      emitter.emit("lala");
-      console.log("oki");
-    } else if (store.nbDisplay === 0) {
-      store.displayBlocks = 0;
+    } else {
+      store.displayBlocks -= 1;
     }
     this.setState({ store: store });
     this.StateProvider.update("store", store);

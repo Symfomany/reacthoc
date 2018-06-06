@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StateProvider } from "react-state-provider";
-import emitter from "../store/emitter";
 
 class CounterButtons extends Component {
   constructor(props) {
@@ -15,14 +14,6 @@ class CounterButtons extends Component {
   increment() {
     let store = { ...this.state.store };
     store.nbDisplay = store.nbDisplay + 1;
-
-    if (store.nbDisplay > 20) {
-      store.displayBlocks += 5;
-      emitter.emit("lala");
-      console.log("oki");
-    } else if (store.nbDisplay === 0) {
-      store.displayBlocks = 0;
-    }
     this.setState({ store: store });
     this.StateProvider.update("store", store);
   }
@@ -45,9 +36,7 @@ class CounterButtons extends Component {
     return (
       <div>
         <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>
-          - {this.state.store.displayBlocks}
-        </button>
+        <button onClick={this.decrement}>-</button>
         <button onClick={this.reset}>Reset</button>
       </div>
     );
