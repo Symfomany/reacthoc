@@ -14,11 +14,12 @@ class Title extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.nbDisplay}</p>
+        <p>{this.props.data.nbDisplay}</p>
+        <p>{this.props.nb}</p>
+
         <button onClick={this.props.changer}>Changez-moi</button>
       </div>
     );
   }
 }
-
 export default withStore(Title);

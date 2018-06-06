@@ -6,12 +6,6 @@ const Store = {
     realtime: false,
     displayBlocks: 3,
     orderBy: "title"
-  },
-  get(key) {
-    return this.data[key];
-  },
-  register(key, value) {
-    this.data[key] = value;
   }
 };
 

@@ -10,6 +10,7 @@
 * Passer des Childrens des props: design Pattern Communication
 * Parler du Context
 * Montrer le Bus d'Events https://github.com/arkency/event-bus
+* Parcourir la documentation React pour l'approfondir
 * Passer dans le Provider qui fourni le Context du projet
   ![Provider et Context](https://github.com/react-theming/react-theme-provider/blob/master/doc/ThemeProvider.png)
 

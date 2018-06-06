@@ -9,21 +9,25 @@ const withStore = ComponentToWrap => {
   return class extends Component {
     constructor(props) {
       super(props);
-      this.state = { nbDisplay: Store.data.nbDisplay };
+      this.state = { data: Store.data, nb: 5 };
       this.changer = this.changer.bind(this);
     }
 
     changer() {
       Store.data.nbDisplay = Store.data.nbDisplay + 1;
-      this.setState({ nbDisplay: Store.data.nbDisplay });
-      EventBus.publish("exampleEventName", "Watson");
+      Store.data.message = "Je suis passé";
+      this.setState({ data: Store.data, nb: this.state.nb + 1 });
+      console.log("laaa");
     }
 
     render() {
       return (
         <ComponentToWrap
-          changer={this.changer}
-          nbDisplay={this.state.nbDisplay}
+          {...this.props}
+          {...this.state}
+          nb={this.state.nb}
+          data={this.state.data}
+          onClick={this.changer}
         />
       );
     }

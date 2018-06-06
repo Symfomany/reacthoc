@@ -1,26 +1,34 @@
 import React, { Component } from "react";
 import withStore from "../hoc/withStore";
-import EventBus from "eventing-bus";
+import PropTypes from "prop-types";
 
 class Display extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.hello = this.hello.bind(this);
-    EventBus.on("exampleEventName", this.hello);
   }
 
-  hello(name) {
-    console.log("Hello" + name);
-    this.forceUpdate();
+  componentDidUpdate() {
+    console.log("laaa");
   }
+
+  componentWillReceiveProps() {
+    console.log("ouii");
+  }
+
+  componentWillUpdate() {
+    console.log("okkk");
+  }
+
   render() {
-    console.log(this.props.nbDisplay);
     return (
       <div>
-        <p>{this.props.nbDisplay}</p>
-        {this.props.nbDisplay > 15 && (
-          <p>Je suis au dessus {this.props.nbDisplay}</p>
+        <h3> {this.props.data.nbDisplay}</h3>
+
+        <button onClick={this.props.changer}>Changez-moi</button>
+
+        {this.props.data.nbDisplay > 15 && (
+          <p>Je suis au dessus {this.props.data.nbDisplay}</p>
         )}
       </div>
     );
