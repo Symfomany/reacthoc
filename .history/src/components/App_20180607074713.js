@@ -12,12 +12,7 @@ const ThemeContext = React.createContext("light");
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      theme: {
-        bg: "#fff",
-        fg: "#eee"
-      }
-    };
+    this.state = {};
     this.counterState = StateProvider.createState("store", Store.data);
   }
 

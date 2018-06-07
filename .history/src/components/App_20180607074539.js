@@ -7,18 +7,12 @@ import CounterDisplay from "./CounterDisplay";
 import CounterButtons from "./CounterButtons";
 import Store from "../store";
 
-const ThemeContext = React.createContext("light");
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      theme: {
-        bg: "#fff",
-        fg: "#eee"
-      }
-    };
+    this.state = {};
     this.counterState = StateProvider.createState("store", Store.data);
+    const ThemeContext = React.createContext("light");
   }
 
   componentWillUnmount() {

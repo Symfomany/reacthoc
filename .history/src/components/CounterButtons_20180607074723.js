@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { StateProvider } from "react-state-provider";
 import emitter from "../store/emitter";
-import Enfant from "./Enfant";
 const ThemeContext = React.createContext("light");
 
 class CounterButtons extends Component {
@@ -51,7 +50,7 @@ class CounterButtons extends Component {
           - {this.state.store.displayBlocks}
         </button>
         <ThemeContext.Consumer>
-          {theme => (theme = <Enfant theme={theme} />)}
+          {theme => <Button theme={theme} />}
         </ThemeContext.Consumer>
         <button onClick={this.reset}>Reset</button>
       </div>

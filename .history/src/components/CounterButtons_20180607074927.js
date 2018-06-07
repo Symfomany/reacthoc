@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { StateProvider } from "react-state-provider";
 import emitter from "../store/emitter";
-import Enfant from "./Enfant";
 const ThemeContext = React.createContext("light");
 
 class CounterButtons extends Component {
